@@ -11,7 +11,3 @@ Artisan::command('inspire', function () {
 
 
 Schedule::command('proxmox:cleanup-pending-container-deletions')->dailyAt("12:01");
-
-Broadcast::channel('order-shipped', function ($user) {
-    return ['id' => $user->id, 'name' => $user->name];
-});
