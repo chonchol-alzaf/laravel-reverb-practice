@@ -14,8 +14,9 @@ class OrderShipped implements ShouldBroadcast
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     
-    public function __construct(public int $orderId=1)
+    public function __construct(public $status="Shipped")
     {
+        Log::info($status);
     }
 
     

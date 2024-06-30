@@ -10,15 +10,20 @@
 </head>
 
 <body>
-    Hello
+    Hello developer, 
     <div id="message"></div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             Echo.channel(`dashboard`)
                 .listen('OrderShipped', (e) => {
-                    console.log("Hello")
-                    console.log(e)
+                    console.log("Hello");
+                    console.log(e);
+
+                    const messageElement = document.getElementById('message');
+
+                    // Convert the event data to a string and display it
+                    messageElement.textContent = JSON.stringify(e, null, 2);
                 });
         })
     </script>
